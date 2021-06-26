@@ -19,13 +19,17 @@ const useStyles = makeStyles((theme) => ({
 const Summary = () => {
   const classes = useStyles();
   const { transactions } = useContext(ExpenseContext);
-  const ammount = transactions.map(trans => trans.amount).reduce((currentValue, prevValue) => currentValue += prevValue, 0);
+  const amount = transactions.map(trans => trans.amount).reduce((currentValue, prevValue) => currentValue += prevValue, 0);
   return (
     <Paper square className={classes.root}>
       <Grid container>
         <Grid item xs={12}>
-          <Typography align="center" variant="subtitle1" component="h1">Balance</Typography>
-          <Typography className={ammount < 0 ? classes.minus : classes.plus} align="center" variant="h6" component="h1">${ammount}</Typography>
+          <Typography align="center" variant="subtitle1" component="h1">BALANCE</Typography>
+          <Typography
+            className={amount < 0 ? classes.minus : classes.plus}
+            align="center"
+            variant="h6"
+            component="h1">$ {amount.toLocaleString(navigator.language, { minimumFractionDigits: 2 })}</Typography>
         </Grid>
       </Grid>
     </Paper>

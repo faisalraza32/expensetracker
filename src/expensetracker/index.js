@@ -13,7 +13,7 @@ const ExpenseTracker = () => {
     <ExpenseProvider>
       <Grid container>
         <Grid item xs={12}>
-          <Header title="Expense Tracker" />
+          <Header title="Expense Manager" />
         </Grid>
         <Grid container>
           <Grid item xs={12} sm={6} lg={4}>

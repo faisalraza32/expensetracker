@@ -71,7 +71,7 @@ const TransactionForm = () => {
       <form onSubmit={handleSubmit}>
         <Grid container>
           <Grid item xs={12}>
-            <Typography variant="h6">Add Transaction</Typography>
+            <Typography variant="h6">Transaction</Typography>
           </Grid>
           <Grid item xs={12} className={classes.formField}>
             <FormControl component="fieldset" ref={titleRef}>
@@ -85,7 +85,7 @@ const TransactionForm = () => {
           <Grid item xs={12} className={classes.formField}>
             <TextField
               required
-              label="Transaction Title"
+              label="Title"
               value={transaction.title}
               fullWidth
               variant="outlined"
@@ -98,7 +98,7 @@ const TransactionForm = () => {
           <Grid item xs={12} className={classes.formField}>
             <TextField
               required
-              label="Transaction Amount"
+              label="Amount"
               variant="outlined"
               type="number"
               value={transaction.amount}

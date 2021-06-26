@@ -29,11 +29,17 @@ const IncomeExpense = () => {
       <Grid container>
         <Grid item xs={6} className={classes.border}>
           <Typography variant="subtitle1" align="center">INCOME</Typography>
-          <Typography className={classes.plus} variant="h6" align="center">${income}</Typography>
+          <Typography
+            className={classes.plus}
+            variant="h6"
+            align="center">$ {income.toLocaleString(navigator.language, { minimumFractionDigits: 2 })}</Typography>
         </Grid>
         <Grid item xs={6}>
           <Typography variant="subtitle1" align="center">EXPENSE</Typography>
-          <Typography className={classes.minus} variant="h6" align="center">${expense}</Typography>
+          <Typography
+            className={classes.minus}
+            variant="h6"
+            align="center">$ {expense.toLocaleString(navigator.language, { minimumFractionDigits: 2 })}</Typography>
         </Grid>
       </Grid>
     </Paper>

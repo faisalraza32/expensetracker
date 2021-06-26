@@ -19,7 +19,7 @@ const TransactionList = () => {
     <Paper square className={classes.root}>
       <Grid container>
         <Grid item xs={12}>
-          <Typography variant="h6">Transaction List</Typography>
+          <Typography variant="h6">History</Typography>
           <Divider />
         </Grid>
         <Grid item xs={12}>
