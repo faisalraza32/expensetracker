@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 const Summary = () => {
   const classes = useStyles();
   const { transactions } = useContext(ExpenseContext);
-  const amount = transactions.map(trans => trans.amount).reduce((currentValue, prevValue) => currentValue += prevValue, 0);
+  const amount = transactions.map(trans => 0 + trans.amount).reduce((currentValue, prevValue) => currentValue += prevValue, 0);
   return (
     <Paper square className={classes.root}>
       <Grid container>
