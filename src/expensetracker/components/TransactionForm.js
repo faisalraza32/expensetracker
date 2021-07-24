@@ -23,8 +23,8 @@ const INITIAL_STATE = {
   transactionType: "expense",
 }
 const TransactionForm = () => {
-  const classes = useStyles();
   const titleRef = useRef(null)
+  const classes = useStyles();
   const { current, AddTransaction, EditTransaction, } = useContext(ExpenseContext);
   const [transaction, setTransaction] = useState(current ?? INITIAL_STATE);
 
@@ -41,7 +41,7 @@ const TransactionForm = () => {
     return {
       _id: transaction._id ?? null,
       title: transaction.title,
-      amount: transaction.transactionType === 'expense' ? transaction.amount * -1 : transaction.amount,
+      amount: transaction.transactionType === 'expense' ? transaction.amount * -1 : transaction.amount * 1,
     }
   }
 
@@ -74,7 +74,7 @@ const TransactionForm = () => {
             <Typography variant="h6">Transaction</Typography>
           </Grid>
           <Grid item xs={12} className={classes.formField}>
-            <FormControl component="fieldset" ref={titleRef}>
+            <FormControl component="fieldset">
               <FormLabel component="legend">Type</FormLabel>
               <RadioGroup name="transactiontype" value={transaction.transactionType} onChange={handleTypeChange}>
                 <FormControlLabel value="expense" control={<Radio size="small" />} label="Expense" size="small" />
@@ -84,6 +84,7 @@ const TransactionForm = () => {
           </Grid>
           <Grid item xs={12} className={classes.formField}>
             <TextField
+              ref={titleRef}
               required
               label="Title"
               value={transaction.title}
