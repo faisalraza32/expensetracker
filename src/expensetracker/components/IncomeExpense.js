@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 const IncomeExpense = () => {
   const classes = useStyles();
   const { transactions } = useContext(ExpenseContext);
-  const income = transactions.map(trans => trans.amount < 0 ? 0 : trans.amount).reduce((prevValue, curValue) => prevValue += curValue, 0);
+  const income = transactions.map(trans => trans.amount < 0 ? 0 : Math.abs(trans.amount)).reduce((prevValue, curValue) => prevValue += curValue, 0);
   const expense = transactions.map(trans => trans.amount < 0 ? Math.abs(trans.amount) : 0).reduce((prevValue, curValue) => prevValue += curValue, 0);
   return (
     <Paper square className={classes.root}>
